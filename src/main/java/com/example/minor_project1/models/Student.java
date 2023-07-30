@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -38,11 +39,11 @@ public class Student implements Serializable {
 
     @OneToMany(mappedBy = "my_student", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"my_student"})
-    private List<Book> bookList;
+    private Set<Book> bookList;
 
     @OneToMany(mappedBy = "myStudent", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"myStudent"})
-    private List<Transactions> transList;
+    private Set<Transactions> transList;
 
     @OneToOne
     @JoinColumn

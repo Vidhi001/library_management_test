@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,7 +31,7 @@ public class Author {
 
     @OneToMany(mappedBy = "my_author")
     @JsonIgnoreProperties({"my_author"})
-    private List<Book> bookList;
+    private Set<Book> bookList;
 
 }
 
