@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -46,7 +47,7 @@ public class Book {
 
     @OneToMany(mappedBy = "myBook", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"myAdmin"})
-    private List<Transactions> transactionsList;
+    private Set<Transactions> transactionsList;
 
 }
 

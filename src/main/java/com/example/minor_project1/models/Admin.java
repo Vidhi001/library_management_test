@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -32,7 +33,7 @@ public class Admin {
 
     @OneToMany(mappedBy = "myAdmin")
     @JsonIgnoreProperties({"transactionsList"})
-    private List<Transactions> transactionsList;
+    private Set<Transactions> transactionsList;
 
     @OneToOne
     @JoinColumn
