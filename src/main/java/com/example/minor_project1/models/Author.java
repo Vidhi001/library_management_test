@@ -29,7 +29,7 @@ public class Author {
     @CreationTimestamp
     private Date CreatedOn;
 
-    @OneToMany(mappedBy = "my_author")
+    @OneToMany(mappedBy = "my_author", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"my_author"})
     private Set<Book> bookList;
 

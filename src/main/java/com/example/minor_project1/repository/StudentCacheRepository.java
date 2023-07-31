@@ -21,8 +21,8 @@ public class StudentCacheRepository {
     public Student get(Integer studentId){
         Object studentData = cacheConfig.getTemplate().opsForValue().get(getKey(studentId));
         logger.debug("student data {}",studentData);
-        Student data = (Student) studentData;
-        return studentData==null ? null : data;
+//        Student data = (Student) studentData;
+        return studentData==null ? null : (Student) studentData;
 
     }
 

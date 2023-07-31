@@ -30,10 +30,10 @@ public class StudentServices {
         studentRepository.save(studentRequest);
     }
 
-    public Student getOtherDetails(Integer id){
-        Student student  = studentRepository.findById(id).orElse(null);
-        return student;
-    }
+//    public Student getOtherDetails(Integer id){
+//        Student student  = studentRepository.findById(id).orElse(null);
+//        return student;
+//    }
     public Student get(Integer id) {
         Student student = studentCacheRepository.get(id);
         if (student != null) {

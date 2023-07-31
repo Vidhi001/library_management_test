@@ -31,7 +31,7 @@ public class Admin {
     @CreationTimestamp
     private Date CreatedOn;
 
-    @OneToMany(mappedBy = "myAdmin")
+    @OneToMany(mappedBy = "myAdmin", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"transactionsList"})
     private Set<Transactions> transactionsList;
 

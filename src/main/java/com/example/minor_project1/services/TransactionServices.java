@@ -39,7 +39,7 @@ public class TransactionServices {
 
     public String initCreate(CreateTransactionRequest transactionRequest, Integer adminId) throws Exception {
 
-        Student student = studentServices.getOtherDetails(transactionRequest.getStudentId());
+        Student student = studentServices.get(transactionRequest.getStudentId());
         Admin admin = adminServices.get(adminId);
         List<Book> bookLst = bookServices.getByRequest("Id", String.valueOf(transactionRequest.getBookId()));
 
